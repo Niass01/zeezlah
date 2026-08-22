@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeezlah Supermarket — Links</title>
+<meta name="description" content="Your everyday essentials, plus affordable skincare and beauty products. Follow Zeezlah Supermarket and find our store.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Zeezlah Supermarket">
+<meta property="og:description" content="Your everyday essentials · Affordable skincare & beauty products.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://niass01.github.io/zeezlah/">
+<meta property="og:image" content="https://niass01.github.io/zeezlah/brand_assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zeezlah Supermarket">
+<meta name="twitter:description" content="Your everyday essentials · Affordable skincare & beauty products.">
+<meta name="twitter:image" content="https://niass01.github.io/zeezlah/brand_assets/og-image.png">
+
+<!-- Favicon: cart-Z mark, echoes the logo -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111'/%3E%3Cpath d='M25 30h34l-30 34h30' stroke='white' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='76' r='6' fill='white'/%3E%3Ccircle cx='52' cy='76' r='6' fill='white'/%3E%3C/svg%3E">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  // Apply saved theme before paint to avoid a flash.
+  (function () {
+    try {
+      var saved = localStorage.getItem('zeezlah-theme');
+      if (saved === 'dark') document.documentElement.classList.add('dark');
+    } catch (e) {}
+  })();
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+        colors: {
+          ink: '#1c1917',
+          card: { light: '#ffffff', dark: '#1f1a17' },
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html.dark { color-scheme: dark; }
+
+  body {
+    background-color: #fbf7f4;
+  }
+  html.dark body {
+    background-color: #15110f;
+  }
+
+  /* Ambient blush/peach glow, quiet in light mode, warmer/dimmer in dark */
+  .glow {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 40% at 18% 10%, rgba(246, 176, 154, 0.35), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 15%, rgba(252, 214, 173, 0.35), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 50% 100%, rgba(240, 190, 200, 0.28), transparent 60%);
+  }
+  html.dark .glow {
+    background:
+      radial-gradient(ellipse 60% 40% at 18% 10%, rgba(120, 60, 55, 0.35), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 15%, rgba(110, 75, 45, 0.35), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 50% 100%, rgba(90, 55, 65, 0.30), transparent 60%);
+  }
+
+  .card-shadow {
+    box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04), 0 12px 32px -12px rgba(28, 25, 23, 0.14);
+  }
+  html.dark .card-shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -14px rgba(0, 0, 0, 0.55);
+  }
+
+  .link-row {
+    transition-property: transform, box-shadow, border-color, background-color;
+    transition-duration: 160ms;
+    transition-timing-function: ease-out;
+  }
+  .link-row:hover { transform: translateY(-2px); }
+  .link-row:active { transform: translateY(0); }
+
+  /* Primary CTA — Rate Our Store. Solid fill, the loudest thing on the page. */
+  .cta-primary {
+    background-color: #1c1917;
+    color: #fdfaf7;
+    box-shadow: 0 1px 2px rgba(28, 25, 23, 0.08), 0 16px 36px -12px rgba(28, 25, 23, 0.38);
+  }
+  html.dark .cta-primary {
+    background-color: #fdfaf7;
+    color: #1c1917;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 36px -12px rgba(0, 0, 0, 0.6);
+  }
+  .cta-primary:hover { transform: translateY(-2px); }
+  .cta-primary:active { transform: translateY(0); }
+
+  /* Ghost button — Share this page. Quiet, sits below the main stack. */
+  .ghost-btn {
+    transition-property: transform, opacity, background-color;
+    transition-duration: 160ms;
+    transition-timing-function: ease-out;
+  }
+  .ghost-btn:hover { transform: translateY(-1px); }
+  .ghost-btn:active { transform: translateY(0); }
+
+  .logo-black { display: block; }
+  .logo-white { display: none; }
+  html.dark .logo-black { display: none; }
+  html.dark .logo-white { display: block; }
+
+  .theme-toggle .sun { opacity: 1; transform: scale(1) rotate(0deg); }
+  .theme-toggle .moon { opacity: 0; transform: scale(0.5) rotate(-40deg); }
+  html.dark .theme-toggle .sun { opacity: 0; transform: scale(0.5) rotate(40deg); }
+  html.dark .theme-toggle .moon { opacity: 1; transform: scale(1) rotate(0deg); }
+  .theme-toggle svg {
+    transition-property: transform, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+  }
+</style>
+</head>
+<body class="min-h-screen font-sans text-ink dark:text-stone-100 antialiased relative">
+
+<div class="glow"></div>
+
+<!-- Theme toggle -->
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Toggle dark mode"
+  class="theme-toggle fixed top-5 right-5 z-10 grid place-items-center h-10 w-10 rounded-full bg-white/70 dark:bg-stone-800/70 backdrop-blur border border-stone-900/10 dark:border-white/10 shadow-sm hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 dark:focus-visible:outline-white active:scale-95"
+>
+  <svg class="sun absolute h-[18px] w-[18px] text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <circle cx="12" cy="12" r="4.5"></circle>
+    <path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8L6 18M18 6l1.8-1.8"></path>
+  </svg>
+  <svg class="moon absolute h-[18px] w-[18px] text-stone-200" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a.6.6 0 0 0-.77-.75 9.7 9.7 0 1 0 12.5 12.5.6.6 0 0 0-.73-.75Z"></path>
+  </svg>
+</button>
+
+<main class="relative z-[1] flex min-h-screen items-center justify-center px-5 py-16 sm:py-20">
+  <div class="w-full max-w-[420px] md:max-w-[480px] flex flex-col items-center">
+
+    <!-- Profile card -->
+    <section class="w-full rounded-[26px] bg-card-light/90 dark:bg-card-dark/90 backdrop-blur border border-stone-900/[0.06] dark:border-white/[0.08] card-shadow px-7 py-9 sm:px-9 sm:py-10 flex flex-col items-center text-center">
+      <img src="brand_assets/logo-black.png" alt="Zeezlah Supermarket" class="logo-black h-9 sm:h-11 w-auto select-none" draggable="false">
+      <img src="brand_assets/logo-white.png" alt="Zeezlah Supermarket" class="logo-white h-9 sm:h-11 w-auto select-none" draggable="false">
+
+      <p class="mt-4 text-[13.5px] sm:text-sm leading-relaxed text-stone-600 dark:text-stone-400 max-w-[300px]">
+        Your everyday essentials.<br>Affordable skincare &amp; beauty products.
+      </p>
+
+      <!-- Quick social icons -->
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/zeezlahmart" target="_blank" rel="noopener noreferrer" aria-label="Zeezlah on Instagram"
+           class="link-row grid place-items-center h-9 w-9 rounded-full bg-stone-900 dark:bg-white text-white dark:text-stone-900 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 dark:focus-visible:outline-white">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/share/18N53vzqkm/" target="_blank" rel="noopener noreferrer" aria-label="Zeezlah on Facebook"
+           class="link-row grid place-items-center h-9 w-9 rounded-full bg-stone-900 dark:bg-white text-white dark:text-stone-900 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 dark:focus-visible:outline-white">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+            <path d="M14.5 8.5H16V5.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.5H7.4V15h2.4v7h2.9v-7h2.4l.4-2.9h-2.8v-2.2c0-.85.24-1.4 1.5-1.4Z"></path>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@zeezlahmart" target="_blank" rel="noopener noreferrer" aria-label="Zeezlah on TikTok"
+           class="link-row grid place-items-center h-9 w-9 rounded-full bg-stone-900 dark:bg-white text-white dark:text-stone-900 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 dark:focus-visible:outline-white">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+            <path d="M16.6 5.2c.6 1.1 1.7 1.9 3 2.1v2.3c-1.2 0-2.4-.4-3.4-1.1v5.7c0 2.7-2.1 4.8-4.8 4.8s-4.8-2.1-4.8-4.8 2.1-4.8 4.8-4.8c.2 0 .5 0 .7.1v2.4a2.4 2.4 0 1 0 1.7 2.3V3h2.5c0 .8.1 1.5.3 2.2Z"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Link rows: LINKS block — update hrefs here to change destinations -->
+    <nav class="w-full mt-4 flex flex-col gap-3" aria-label="Zeezlah links">
+
+      <!-- Primary CTA: reviews are the goal, this is the loudest element on the page -->
+      <a href="https://g.page/r/CcN9RHOlSDFSECA/review" target="_blank" rel="noopener noreferrer"
+         class="cta-primary link-row group flex items-center gap-3 w-full h-[58px] px-5 rounded-2xl">
+        <span class="grid place-items-center h-8 w-8 rounded-lg bg-white/15 dark:bg-stone-900/10 shrink-0">
+          <svg viewBox="0 0 24 24" class="h-[18px] w-[18px]" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"></path>
+          </svg>
+        </span>
+        <span class="text-[14.5px] font-semibold flex-1 text-left">Rate Our Store</span>
+        <svg viewBox="0 0 24 24" class="h-4 w-4 opacity-60 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17 17 7M9 7h8v8"></path>
+        </svg>
+      </a>
+
+      <!-- Directions: no origin param, so Maps routes from wherever the visitor is -->
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Zeezlah+Supermarket&destination_place_id=ChIJXxQgm4ENNxARw31Ec6VIMVI" target="_blank" rel="noopener noreferrer"
+         class="link-row group flex items-center gap-3 w-full h-[54px] px-4 rounded-2xl bg-card-light/90 dark:bg-card-dark/90 backdrop-blur border border-stone-900/[0.06] dark:border-white/[0.08] card-shadow hover:border-stone-900/[0.12] dark:hover:border-white/[0.16]">
+        <span class="grid place-items-center h-7 w-7 rounded-lg bg-stone-900 dark:bg-white text-white dark:text-stone-900 shrink-0">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-6.5-5.4-6.5-10.5a6.5 6.5 0 1 1 13 0C18.5 15.6 12 21 12 21Z"></path>
+            <circle cx="12" cy="10.5" r="2.2"></circle>
+          </svg>
+        </span>
+        <span class="text-[13.5px] font-semibold flex-1 text-left">Get Directions</span>
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-stone-400 dark:text-stone-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17 17 7M9 7h8v8"></path>
+        </svg>
+      </a>
+
+      <div class="flex gap-3">
+        <a href="https://wa.me/2347069467652" target="_blank" rel="noopener noreferrer"
+           class="link-row group flex items-center gap-2.5 w-1/2 h-[54px] px-4 rounded-2xl bg-card-light/90 dark:bg-card-dark/90 backdrop-blur border border-stone-900/[0.06] dark:border-white/[0.08] card-shadow hover:border-stone-900/[0.12] dark:hover:border-white/[0.16]">
+          <span class="grid place-items-center h-7 w-7 rounded-lg bg-stone-900 dark:bg-white text-white dark:text-stone-900 shrink-0">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+              <path d="M12 2a10 10 0 0 0-8.62 15.03L2 22l5.11-1.34A10 10 0 1 0 12 2zm5.61 14.24c-.24.68-1.19 1.24-1.95 1.4-.53.11-1.22.2-3.55-.76-2.98-1.23-4.9-4.24-5.05-4.44-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.17 1.03-2.47.27-.3.6-.37.8-.37h.57c.18 0 .43-.07.67.51.24.58.83 2.01.9 2.16.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.44.54-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.7-.17 1.38z"></path>
+            </svg>
+          </span>
+          <span class="text-[13.5px] font-semibold flex-1 text-left truncate">WhatsApp</span>
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-stone-400 dark:text-stone-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7M9 7h8v8"></path>
+          </svg>
+        </a>
+
+        <a href="tel:+2347069467652"
+           class="link-row group flex items-center gap-2.5 w-1/2 h-[54px] px-4 rounded-2xl bg-card-light/90 dark:bg-card-dark/90 backdrop-blur border border-stone-900/[0.06] dark:border-white/[0.08] card-shadow hover:border-stone-900/[0.12] dark:hover:border-white/[0.16]">
+          <span class="grid place-items-center h-7 w-7 rounded-lg bg-stone-900 dark:bg-white text-white dark:text-stone-900 shrink-0">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </span>
+          <span class="text-[13.5px] font-semibold flex-1 text-left truncate">Call Us</span>
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-stone-400 dark:text-stone-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7M9 7h8v8"></path>
+          </svg>
+        </a>
+      </div>
+
+      <a href="https://www.instagram.com/zeezlahmart" target="_blank" rel="noopener noreferrer"
+         class="link-row group flex items-center gap-3 w-full h-[54px] px-4 rounded-2xl bg-card-light/90 dark:bg-card-dark/90 backdrop-blur border border-stone-900/[0.06] dark:border-white/[0.08] card-shadow hover:border-stone-900/[0.12] dark:hover:border-white/[0.16]">
+        <span class="grid place-items-center h-7 w-7 rounded-lg bg-stone-900 dark:bg-white text-white dark:text-stone-900 shrink-0">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </span>
+        <span class="text-[13.5px] font-semibold flex-1 text-left">Instagram</span>
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-stone-400 dark:text-stone-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17 17 7M9 7h8v8"></path>
+        </svg>
+      </a>
+
+      <div class="flex gap-3">
+        <a href="https://www.facebook.com/share/18N53vzqkm/" target="_blank" rel="noopener noreferrer"
+           class="link-row group flex items-center gap-2.5 w-1/2 h-[54px] px-4 rounded-2xl bg-card-light/90 dark:bg-card-dark/90 backdrop-blur border border-stone-900/[0.06] dark:border-white/[0.08] card-shadow hover:border-stone-900/[0.12] dark:hover:border-white/[0.16]">
+          <span class="grid place-items-center h-7 w-7 rounded-lg bg-stone-900 dark:bg-white text-white dark:text-stone-900 shrink-0">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+              <path d="M14.5 8.5H16V5.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.5H7.4V15h2.4v7h2.9v-7h2.4l.4-2.9h-2.8v-2.2c0-.85.24-1.4 1.5-1.4Z"></path>
+            </svg>
+          </span>
+          <span class="text-[13.5px] font-semibold flex-1 text-left truncate">Facebook</span>
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-stone-400 dark:text-stone-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7M9 7h8v8"></path>
+          </svg>
+        </a>
+
+        <a href="https://www.tiktok.com/@zeezlahmart" target="_blank" rel="noopener noreferrer"
+           class="link-row group flex items-center gap-2.5 w-1/2 h-[54px] px-4 rounded-2xl bg-card-light/90 dark:bg-card-dark/90 backdrop-blur border border-stone-900/[0.06] dark:border-white/[0.08] card-shadow hover:border-stone-900/[0.12] dark:hover:border-white/[0.16]">
+          <span class="grid place-items-center h-7 w-7 rounded-lg bg-stone-900 dark:bg-white text-white dark:text-stone-900 shrink-0">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+              <path d="M16.6 5.2c.6 1.1 1.7 1.9 3 2.1v2.3c-1.2 0-2.4-.4-3.4-1.1v5.7c0 2.7-2.1 4.8-4.8 4.8s-4.8-2.1-4.8-4.8 2.1-4.8 4.8-4.8c.2 0 .5 0 .7.1v2.4a2.4 2.4 0 1 0 1.7 2.3V3h2.5c0 .8.1 1.5.3 2.2Z"></path>
+            </svg>
+          </span>
+          <span class="text-[13.5px] font-semibold flex-1 text-left truncate">TikTok</span>
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-stone-400 dark:text-stone-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7M9 7h8v8"></path>
+          </svg>
+        </a>
+      </div>
+
+    </nav>
+
+    <!-- Share: quiet, sits below the main stack -->
+    <button
+      id="share-btn"
+      type="button"
+      class="ghost-btn mt-4 flex items-center gap-2 px-4 py-2 rounded-full text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 hover:bg-stone-900/[0.04] dark:hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 dark:focus-visible:outline-white"
+    >
+      <svg viewBox="0 0 24 24" class="h-[15px] w-[15px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"></circle>
+        <circle cx="6" cy="12" r="3"></circle>
+        <circle cx="18" cy="19" r="3"></circle>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+      </svg>
+      <span id="share-label" class="text-[12.5px] font-medium">Share this page</span>
+    </button>
+
+    <footer class="mt-3 text-[11px] text-stone-400 dark:text-stone-500">
+      © 2026 Zeezlah Supermarket. All rights reserved.
+    </footer>
+
+  </div>
+</main>
+
+<script>
+  var toggle = document.getElementById('theme-toggle');
+  toggle.addEventListener('click', function () {
+    var root = document.documentElement;
+    var isDark = root.classList.toggle('dark');
+    try { localStorage.setItem('zeezlah-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+  });
+
+  var shareBtn = document.getElementById('share-btn');
+  var shareLabel = document.getElementById('share-label');
+
+  function showCopied() {
+    var original = shareLabel.textContent;
+    shareLabel.textContent = 'Link copied!';
+    setTimeout(function () { shareLabel.textContent = original; }, 1800);
+  }
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      showCopied();
+    } catch (e) {
+      // Clipboard API unavailable (e.g. insecure context) — nothing more we can do silently.
+    }
+  }
+
+  shareBtn.addEventListener('click', async function () {
+    var shareData = {
+      title: 'Zeezlah Supermarket',
+      text: 'Your everyday essentials · Affordable skincare & beauty products.',
+      url: window.location.href,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return; // share sheet completed — nothing more to do
+      } catch (err) {
+        // Falls through to the clipboard copy below on ANY rejection, deliberately
+        // including AbortError. Spec-wise AbortError should mean "user cancelled",
+        // but some browsers/environments (no share targets configured) also reject
+        // with AbortError even though the user never saw a share sheet — those two
+        // cases aren't reliably distinguishable. Always copying is the safer default:
+        // worst case a cancelling user gets an unwanted (harmless) clipboard copy;
+        // the alternative is the button silently doing nothing for those environments.
+      }
+    }
+    await copyLink();
+  });
+</script>
+
+</body>
+</html>
